@@ -10,22 +10,26 @@
 
 @interface EmptyStateView()
 @property (nonatomic, strong) UIImageView *stateImageView;
-
+@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, assign) CGFloat height;
 @end
 
 const CGFloat paddingFromImageToTitle = 25.f;
 const CGFloat paddingFromTitleToDescription = 12.f;
 
-
 @implementation EmptyStateView
+
+@synthesize height;
 
 - (id)initWithFrame:(CGRect)frame  {
     
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
+        height = 0.f;
         self.backgroundColor = [UIColor clearColor];
+        self.contentView = [[UIView alloc] initWithFrame:CGRectZero];
+        [self addSubview:self.contentView];
         
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.backgroundColor = [UIColor clearColor];
@@ -35,7 +39,7 @@ const CGFloat paddingFromTitleToDescription = 12.f;
         self.titleLabel.text = @"Title";
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.numberOfLines = 2;
-        [self addSubview:self.titleLabel];
+        [self.contentView addSubview:self.titleLabel]; //[self addSubview:self.titleLabel];
         
         self.descriptionLabel = [[UILabel alloc] init];
         self.descriptionLabel.backgroundColor = [UIColor clearColor];
@@ -45,7 +49,7 @@ const CGFloat paddingFromTitleToDescription = 12.f;
         self.descriptionLabel.text = @"Put your description here";
         self.descriptionLabel.textAlignment = NSTextAlignmentCenter;
         self.descriptionLabel.numberOfLines = 3;
-        [self addSubview:self.descriptionLabel];
+        [self.contentView addSubview:self.descriptionLabel]; //[self addSubview:self.descriptionLabel];
     }
     
     return self;
@@ -55,38 +59,58 @@ const CGFloat paddingFromTitleToDescription = 12.f;
     
     [super layoutSubviews];
     
-    CGRect rectOne = [self boundsForLabel:self.titleLabel];
-    CGRect rectTwo = [self boundsForLabel:self.descriptionLabel];
-    
-    self.stateImageView.center = CGPointMake(self.frame.size.width/2, (self.frame.size.height/2) - self.stateImageView.frame.size.height/2);
-    
-    rectOne.origin.y = self.frame.size.height/2 - rectOne.size.height/2 + paddingFromImageToTitle;
-    self.titleLabel.frame = CGRectMake(0.f,  rectOne.origin.y, self.frame.size.width, rectOne.size.height);
-
-    self.descriptionLabel.frame = CGRectMake(0.f, CGRectGetMaxY(self.titleLabel.frame) + paddingFromTitleToDescription, self.frame.size.width, rectTwo.size.height);
-    
+    self.contentView.frame = CGRectMake(0.f, self.frame.size.height - height, self.frame.size.width, height);
+    self.contentView.center = CGPointMake(self.frame.size.width/2, (self.frame.size.height/2));
+    self.stateImageView.center = CGPointMake(self.contentView.frame.size.width/2, self.stateImageView.center.y);
+    return;    
 }
 
-#pragma mark - Customizations
+#pragma mark - set Customizations
 
-- (void)setTitle:(NSString *)title{
+- (void)addTitle:(NSString *)title{
     self.titleLabel.text = title;
+    
+    CGRect rect = [self boundsForLabel:self.titleLabel];
+    rect.size.width = self.frame.size.width;
+    [self appendView:self.titleLabel withSize:rect.size];
 }
 
-- (void)setDescription:(NSString *)description{
+- (void)addTitle:(NSString *)title withDistance:(CGFloat)padding{
+    height += padding;
+    [self addTitle:title];
+}
+
+- (void)addDescription:(NSString *)description{
     self.descriptionLabel.text = description;
+    
+    CGRect rect = [self boundsForLabel:self.descriptionLabel];
+    rect.size.width = self.frame.size.width;
+    [self appendView:self.descriptionLabel withSize:rect.size];
 }
 
-- (void)setStateImage:(UIImage *)image{
-    _stateImage = image;
+- (void)addDescription:(NSString *)description withDistance:(CGFloat)padding{
+    height += padding;
+    [self addDescription:description];
+}
+
+- (void)addImage:(UIImage *)image{
+    _image = image;
     if (!_stateImageView) {
+        _stateImageView = [[UIImageView alloc] init];
         CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
-        _stateImageView = [[UIImageView alloc] initWithFrame:rect];
+        [self appendView:_stateImageView withSize:rect.size];
     }
     _stateImageView.image = image;
     _stateImageView.clipsToBounds = YES;
-    [self addSubview:_stateImageView];
+    [self.contentView addSubview:_stateImageView];
 }
+
+- (void)addImage:(UIImage *)image withDistance:(CGFloat)padding{
+    height += padding;
+    [self addImage:image];
+}
+
+#pragma mark - get
 
 - (CALayer *)stateImageViewlayer{
     return self.stateImageView.layer;
@@ -110,6 +134,14 @@ const CGFloat paddingFromTitleToDescription = 12.f;
                                                      options:NSStringDrawingUsesLineFragmentOrigin
                                                   attributes:attributes
                                                      context:nil];
+}
+
+- (void) appendView: (UIView *)view withSize:(CGSize) size{
+    CGRect rect = view.frame;
+    rect.origin.y = height;
+    rect.size = size;
+    view.frame = rect;
+    height += CGRectGetHeight(view.frame);
 }
 
 @end

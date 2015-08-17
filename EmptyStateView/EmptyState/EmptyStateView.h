@@ -15,10 +15,16 @@
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *descriptionLabel;
-@property (nonatomic, strong) UIImage *stateImage;
+@property (nonatomic, strong, setter=addImage:) UIImage *image;
 
-- (void)setTitle:(NSString *)title;
-- (void)setDescription:(NSString *)description;
+#pragma mark - set
+- (void)addTitle:(NSString *)title;
+- (void)addTitle:(NSString *)title withDistance:(CGFloat)padding;
+- (void)addDescription:(NSString *)description;
+- (void)addDescription:(NSString *)description withDistance:(CGFloat)padding;
+- (void)addImage:(UIImage *)stateImage withDistance:(CGFloat)padding;
+
+#pragma mark - get
 - (CALayer *)stateImageViewlayer;
 
 #pragma mark - Event

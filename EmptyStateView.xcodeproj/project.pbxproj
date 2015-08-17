@@ -10,7 +10,7 @@
 		84E59FF71B7DCEB40031B2B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E59FF61B7DCEB40031B2B9 /* main.m */; };
 		84E59FFA1B7DCEB40031B2B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E59FF91B7DCEB40031B2B9 /* AppDelegate.m */; };
 		84E59FFD1B7DCEB40031B2B9 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E59FFC1B7DCEB40031B2B9 /* UserViewController.m */; };
-		84E5A0001B7DCEB40031B2B9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E59FFF1B7DCEB40031B2B9 /* SecondViewController.m */; };
+		84E5A0001B7DCEB40031B2B9 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E59FFF1B7DCEB40031B2B9 /* CarViewController.m */; };
 		84E5A0031B7DCEB40031B2B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E5A0011B7DCEB40031B2B9 /* Main.storyboard */; };
 		84E5A0051B7DCEB40031B2B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E5A0041B7DCEB40031B2B9 /* Images.xcassets */; };
 		84E5A0081B7DCEB40031B2B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E5A0061B7DCEB40031B2B9 /* LaunchScreen.xib */; };
@@ -36,8 +36,8 @@
 		84E59FF91B7DCEB40031B2B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		84E59FFB1B7DCEB40031B2B9 /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		84E59FFC1B7DCEB40031B2B9 /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
-		84E59FFE1B7DCEB40031B2B9 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		84E59FFF1B7DCEB40031B2B9 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		84E59FFE1B7DCEB40031B2B9 /* CarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
+		84E59FFF1B7DCEB40031B2B9 /* CarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
 		84E5A0021B7DCEB40031B2B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84E5A0041B7DCEB40031B2B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84E5A0071B7DCEB40031B2B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 				84E59FF91B7DCEB40031B2B9 /* AppDelegate.m */,
 				84E59FFB1B7DCEB40031B2B9 /* UserViewController.h */,
 				84E59FFC1B7DCEB40031B2B9 /* UserViewController.m */,
-				84E59FFE1B7DCEB40031B2B9 /* SecondViewController.h */,
-				84E59FFF1B7DCEB40031B2B9 /* SecondViewController.m */,
+				84E59FFE1B7DCEB40031B2B9 /* CarViewController.h */,
+				84E59FFF1B7DCEB40031B2B9 /* CarViewController.m */,
 				84E5A0011B7DCEB40031B2B9 /* Main.storyboard */,
 				84E5A0041B7DCEB40031B2B9 /* Images.xcassets */,
 				84E5A0061B7DCEB40031B2B9 /* LaunchScreen.xib */,
@@ -237,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E5A0001B7DCEB40031B2B9 /* SecondViewController.m in Sources */,
+				84E5A0001B7DCEB40031B2B9 /* CarViewController.m in Sources */,
 				84E59FFA1B7DCEB40031B2B9 /* AppDelegate.m in Sources */,
 				84E59FFD1B7DCEB40031B2B9 /* UserViewController.m in Sources */,
 				84E59FF71B7DCEB40031B2B9 /* main.m in Sources */,
