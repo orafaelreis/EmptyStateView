@@ -31,7 +31,7 @@ emptyView.stateImageViewlayer.borderColor = [UIColor blackColor].CGColor;
 emptyView.stateImageViewlayer.borderWidth = 2.f;
 ```
 
-You can, additionaly, add action target when user touch the view:
+You can, additionally, add an action when user touch the view:
 
 ```objective-c
 [emptyView addOneTapGestureWithTarget:self action:@selector(loadNextViewController)];
