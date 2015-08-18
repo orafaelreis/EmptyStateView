@@ -7,7 +7,7 @@ It is a custom view for empty state from the UX perspective. It means, instead s
 
 ## Manual Installation
 
-This repository contains a demonstration. So, copy only 'EmptyStateView' folder into your Xcode project. It contains the EmptyStateView.h and EmptyStateView.m files.
+This repository contains a demonstration. So, copy only 'EmptyState' folder into your Xcode project. It contains the EmptyStateView.h and EmptyStateView.m files.
 
 ## How To Use
 
