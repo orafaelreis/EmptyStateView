@@ -39,7 +39,7 @@ You can, additionally, add an action when user touch the view:
 
 ## Alternatives
 Feel free to try follow alternative:
-[https://github.com/dzenbot/DZNEmptyDataSet](DZNEmptyDataSet)
+- [DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)
 
 ## Credits
 
