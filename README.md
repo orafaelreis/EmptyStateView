@@ -37,6 +37,10 @@ You can, additionally, add an action when user touch the view:
 [emptyView addOneTapGestureWithTarget:self action:@selector(loadNextViewController)];
 ```
 
+## Alternatives
+Feel free to try follow alternative:
+[https://github.com/dzenbot/DZNEmptyDataSet](DZNEmptyDataSet)
+
 ## Credits
 
 the intent of this class is to follow good practices observed in the article [Why empty states deserve more design time](https://medium.com/@InVisionApp/why-empty-states-deserve-more-design-time-44b5adc7eb52).
