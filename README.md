@@ -37,9 +37,12 @@ You can, additionally, add an action when user touch the view:
 [emptyView addOneTapGestureWithTarget:self action:@selector(loadNextViewController)];
 ```
 
-## Alternatives
-Feel free to try follow alternative:
-- [DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)
+## Next Steps
+
+The next ativities to do:
+- add buttom with your own target
+- improve samples
+- add arrows
 
 ## Credits
 
